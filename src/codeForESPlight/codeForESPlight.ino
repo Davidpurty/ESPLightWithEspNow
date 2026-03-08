@@ -4,14 +4,22 @@
 #include <espnow.h>
 
 // -------- PIN DEFINITIONS --------
-#define OUT1 D1
-#define OUT2 D0
+/*#define OUT1 D1
+#define OUT2 D0 
 #define PWM1 D6
 #define PWM2 D7
 #define LED D4
 #define BTN1 D2
 #define BTN2 D3
-#define RESTORE_PIN D5   // long press restore
+#define RESTORE_PIN D5   // long press restore*/
+#define OUT1  5
+#define OUT2 16 
+#define PWM1 12
+#define PWM2 13
+#define LED 2
+#define BTN1 4
+#define BTN2 0
+#define RESTORE_PIN 14   // long press restore
 
 // ----------------------------------
 int brightNess =20;
@@ -698,7 +706,7 @@ void loop() {
       led1State = !led1State;
       Serial.print("Setting led1State with button:  ");
       Serial.println(led1State);
-        if (led2State) {
+        if (led1State) {
         setLed1(1,led1Brightness);
         }
         else {
